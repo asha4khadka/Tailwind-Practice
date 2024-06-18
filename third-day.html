@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            transitionDuration: {
+              0: "0ms",
+              2000: "2000ms",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      /* 
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .spin {
+        animation: spin 2s linear infinite;
+      } */
+      /* 
+      @keyframes ping {
+        75%,
+        100% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+      }
+
+      .ping {
+        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+      } */
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(-25%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateY(0);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
+
+      .bounce {
+        animation: bounce 1s infinite;
+      }
+    </style>
+    <title>Third Day of Learning Tailwind CSS</title>
+  </head>
+  <body>
+    <!-- Example of Flex -->
+    <div class="flex flex-wrap justify-around items-center bg-gray-500">
+      <div class="p-20 bg-pink-200 border border-blue-400">Wish</div>
+      <div class="p-20 bg-blue-200 border border-red-400">You</div>
+      <div class="p-20 bg-yellow-200 border border-pink-400">Have</div>
+      <div class="p-20 bg-green-200 border border-yellow-400">Great</div>
+      <div class="p-20 bg-orange-200 border border-parrot-400">Day</div>
+    </div>
+
+    <!-- Example of grid -->
+    <div class="grid grid-cols-4 grid-rows-4 gap-4">
+      <div
+        class="col-span-2 row-span-2 bg-blue-500 flex items-center justify-center"
+      >
+        Spans 2 rows and 2 columns
+      </div>
+      <div class="bg-red-500 flex items-center justify-center">Item 1</div>
+      <div class="bg-green-500 flex items-center justify-center">Item 2</div>
+      <div class="bg-yellow-500 flex items-center justify-center">Item 3</div>
+      <div class="bg-purple-500 flex items-center justify-center">Item 4</div>
+    </div>
+
+    <!-- Transition and Transformation -->
+    <div class="container flex">
+      <img
+        src="image/techie-girl.jpeg"
+        alt=""
+        class="ml-60 h-60 transform hover:rotate-180 hover:scale-120 hover:skew-x-36 transition"
+      />
+      <div class="flex w-100 ml-14 items-center justify-center bg-red-200">
+        <svg
+          class="w-48 text-white bounce"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="blue"
+            stroke-width="3"
+          ></circle>
+          <path
+            class="opacity-50"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+          <text
+            x="12"
+            y="12"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            fill="black"
+            font-size="8"
+            font-weight="700"
+          >
+            Smile
+          </text>
+        </svg>
+      </div>
+    </div>
+
+    <button
+      class="ml-60 mb-10 px-8 py-2 flex-none text-white bg-blue-500 rounded transition-colors duration-700 hover:bg-blue-700"
+    >
+      Click Me
+    </button>
+
+    <button
+      class="px-6 py-2 ml-0 text-white bg-blue-500 rounded transition ease-in-out delay-150 duration-2000 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500"
+    >
+      Explore more here
+    </button>
+  </body>
+</html>
